@@ -21,7 +21,6 @@ jobs:
         run: |
           touch ./profiles.yml
           echo "$profiles" >> ./profiles.yml
-          cat profiles.yml
 
       - name: setup Python 3.12
         uses: actions/setup-python@v5
