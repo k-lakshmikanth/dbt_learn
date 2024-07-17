@@ -19,15 +19,17 @@ jobs:
         with:
           python-version: '3.12'
           
+      - name: check python version
+        run: python --version
+          
       - name: install DBT Databricks adaptor
-        run: pip install -q dbt-databricks
+        run: pip install dbt-databricks
 
       - name: generate profiles.yml
-        env: 
-          profiles: ${{secrets.PROFILES}}
         run: |
           touch ./profiles.yml
-          echo "$profiles" >> ./profiles.yml
+          echo "$${{secrets.PROFILES}}" >> ./profiles.yml
+          ls -a
 
       - name: dbt debug
         run: dbt debug
