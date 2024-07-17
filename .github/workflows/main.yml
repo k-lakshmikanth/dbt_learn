@@ -28,7 +28,7 @@ jobs:
       - name: generate profiles.yml
         run: |
           touch ./profiles.yml
-          echo "$${{secrets.PROFILES}}" >> ./profiles.yml
+          echo "${{ secrets.PROFILES }}" >> ./profiles.yml
           ls -a
           cat profiles.yml
 
