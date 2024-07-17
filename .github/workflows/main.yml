@@ -2,8 +2,8 @@ name: Run DBT project
 run-name: Run DBT project
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 25 21 * * ?'
+  schedule:
+    - cron:  '30 21 * * *'
 
 jobs:
   DBT_RUN:
