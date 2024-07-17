@@ -10,9 +10,18 @@ jobs:
   DBT_RUN:
     name: Deploy models
     runs-on: ubuntu-latest
+    environment: dbt
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.1.5
+
+      - name: generate profiles.yml
+        env:
+          profiles: ${{ secrets.PROFILES }}
+        run: |
+          touch ./profiles.yml
+          echo "$profiles" >> ./profiles.yml
+          cat profiles.yml
 
       - name: setup Python 3.12
         uses: actions/setup-python@v5
@@ -24,13 +33,6 @@ jobs:
           
       - name: install DBT Databricks adaptor
         run: pip install dbt-databricks
-
-      - name: generate profiles.yml
-        run: |
-          touch ./profiles.yml
-          echo "${{ secrets.PROFILES }}" >> ./profiles.yml
-          ls -a
-          cat profiles.yml
 
       - name: dbt debug
         run: dbt debug
