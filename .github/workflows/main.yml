@@ -12,23 +12,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.5
 
+      - name: setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          
+      - name: install DBT Databricks adaptor
+        run: pip install dbt-databricks
+
       - name: generate profiles.yml
         env:
           profiles: ${{ secrets.PROFILES }}
         run: |
           touch ./profiles.yml
           echo "$profiles" >> ./profiles.yml
-
-      - name: setup Python 3.12
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          
-      - name: check python version
-        run: python --version
-          
-      - name: install DBT Databricks adaptor
-        run: pip install dbt-databricks
 
       - name: dbt debug
         run: dbt debug
