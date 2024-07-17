@@ -30,6 +30,7 @@ jobs:
           touch ./profiles.yml
           echo "$${{secrets.PROFILES}}" >> ./profiles.yml
           ls -a
+          cat profiles.yml
 
       - name: dbt debug
         run: dbt debug
