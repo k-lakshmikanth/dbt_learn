@@ -1,1 +1,8 @@
-select * from samples.tpch.orders;
+with orders as (
+    select 
+    * 
+    from
+    {{ source('samples', 'orders') }}
+    )
+
+select * from orders;

@@ -1,1 +1,8 @@
-select * from samples.tpch.customer;
+with customer as (
+    select 
+    * 
+    from
+    {{ source('samples', 'customer') }}
+    )
+
+select * from customer;
