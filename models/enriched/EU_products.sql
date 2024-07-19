@@ -19,16 +19,3 @@ p_container as container,
 p_retailprice as retailprice,
 from partsupp ps 
 join part p on p.p_partkey = ps.ps_partkey
-
-
--- partkey
--- suppkey
--- available_quantity
--- supplycost
--- name
--- manufacturer
--- brand
--- type
--- size
--- container
--- retailprice
