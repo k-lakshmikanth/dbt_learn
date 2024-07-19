@@ -4,7 +4,12 @@ sources:
   - name: samples
     catalog: samples  
     schema: tpch  
-    tables:
-      - name: orders
+    tables:  
       - name: customer
-      
+      - name: lineitem
+      - name: nation
+      - name: orders
+      - name: part
+      - name: partsupp
+      - name: region
+      - name: supplier
