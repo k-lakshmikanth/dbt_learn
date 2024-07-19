@@ -1,10 +1,10 @@
-with customer as (
+with supplier as (
     select * from {{ ref("RAW_supplier") }}
 ),
-with nation as (
+nation as (
     select * from {{ ref("RAW_nation") }}
 ),
-with region as (
+region as (
     select * from {{ ref("RAW_region") }}
 )
 

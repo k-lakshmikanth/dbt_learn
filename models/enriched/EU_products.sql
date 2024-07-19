@@ -1,7 +1,7 @@
 with partsupp as (
     select * from {{ ref("RAW_partsupp") }}
 ),
-with part as (
+part as (
     select * from {{ ref("RAW_part") }}
 )
 
@@ -16,6 +16,6 @@ p_brand as brand,
 p_type as type,
 p_size as size,
 p_container as container,
-p_retailprice as retailprice,
+p_retailprice as retailprice
 from partsupp ps 
 join part p on p.p_partkey = ps.ps_partkey
