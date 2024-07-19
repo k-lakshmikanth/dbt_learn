@@ -12,4 +12,4 @@ o_orderpriority as orderpriority,
 o_clerk as clerk,
 o_shippriority as shippriority,
 o_comment as comment
- from raw.raw_orders
+ from orders
