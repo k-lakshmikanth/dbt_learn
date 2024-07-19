@@ -5,4 +5,4 @@ with region as (
     {{ source('samples', 'region') }}
     )
 
-select * from nation;
+select * from region;
