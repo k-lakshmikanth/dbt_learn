@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: landing
+    tables:
+      - name: students
+        external:
+          location: "abfss://landing@lkmetastore.dfs.core.windows.net/students/" # hdfs://, s3://, azure://, dbfs://, ...
+          using: csv # file type: csv, json, parquet, delta, ...
+          extra_configs:
+            fs.azure.account.key.lkmetastore.blob.core.windows.net: "69zEXRiOkm8qH5g0WcvBAmef4iDXdTvcSN2qvzB8YHhGIDH6511Q0+fOL4qIBy04dFVgkTmemGU5+AStA2hWOw=="
+          options:
+            header: true

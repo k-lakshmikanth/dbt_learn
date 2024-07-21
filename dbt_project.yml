@@ -36,14 +36,14 @@ models:
     raw:
       +materialized: table
       +schema: raw
-      +catalog: dbt_project
+      +catalog: dbt_catalog
     
     enriched:
       +materialized: view
       +schema: enriched
-      +catalog: dbt_project
+      +catalog: dbt_catalog
 
     curated:
       +materialized: view
       +schema: curated
-      +catalog: dbt_project
+      +catalog: dbt_catalog
